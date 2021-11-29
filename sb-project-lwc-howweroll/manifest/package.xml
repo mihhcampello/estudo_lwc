@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>BoatDataService</members>
+        <members>BoatDataServiceTest</members>
+        <members>GenerateData</members>
+        <members>GenerateDataTest</members>
+        <members>SimilarBoatsController</members>
+        <members>SimilarBoatsControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
