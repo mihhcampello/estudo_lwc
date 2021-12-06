@@ -37,6 +37,10 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
+    <types>
+		<members>*</members>
+		<name>LightningMessageChannel</name>
+	</types>
     <!--michelle.campello@superbadgerlwc.com-->
     <version>52.0</version>
 </Package>
