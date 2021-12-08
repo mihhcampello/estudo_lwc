@@ -1,12 +1,13 @@
 // imports
+import {LightningElement, api} from 'lwc';
 import { subscribe, MessageContext } from 'lightning/messageService';
 import BOAT_MESSAGE_CHANNEL from '@salesforce/messageChannel/Boat_Message_Channel__c';
 const TILE_WRAPPER_SELECTED_CLASS = 'tile-wrapper selected';
 const TILE_WRAPPER_UNSELECTED_CLASS = 'tile-wrapper';
 
 export default class BoatTile extends LightningElement {
-    boat;
-    selectedBoatId;
+    @api boat;
+    @api selectedBoatId;
     
     get backgroundStyle() {
         return `background-image:url(${this.boat.Picture__c})`;
@@ -18,14 +19,8 @@ export default class BoatTile extends LightningElement {
     }    
     // Fires event with the Id of the boat that has been selected.
     selectBoat() {
-        this.subscription = subscribe(
-            this.messageContext,
-            BOAT_MESSAGE_CHANNEL,
-            (message) => this.handleMessage(message)
-        );
-
         let boatId = this.boat.Id;
-        const boatselectEvent = new CustomEvent('boatselect', { detail: boatId }); 
+        const boatselectEvent = new CustomEvent('boatselect',{ detail: boatId }); 
         this.dispatchEvent(boatselectEvent);
     }
 }
