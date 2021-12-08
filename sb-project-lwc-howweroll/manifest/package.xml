@@ -11,7 +11,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>ApexComponent</name>
+        <name>ApexComponent</name> <!--sfdx force:source:retrieve -m LightningComponentBundle:boatMap-->
     </types>
     <types>
         <members>*</members>
