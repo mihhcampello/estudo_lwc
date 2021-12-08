@@ -6,6 +6,7 @@ export default class BearTile extends LightningElement {
 		bearSilhouette: `${ursusResources}/img/standing-bear-silhouette.png`,
 	};
     handleOpenRecordClick() {
+        console.log('E');
         const selectEvent = new CustomEvent('bearview', {
             detail: this.bear.Id
         });

@@ -6,6 +6,7 @@ export default class RemoteControl extends LightningElement {
     messageContext;
     
     handleIncrement() {
+        console.log('Q');
         // this.counter++;
         const payload = { 
         operator: 'add',
@@ -14,6 +15,7 @@ export default class RemoteControl extends LightningElement {
         publish(this.messageContext, COUNT_UPDATED_CHANNEL, payload);
     }
     handleDecrement() {
+        console.log('R');
         // this.counter--;
         const payload = { 
         operator: 'subtract',
@@ -22,6 +24,7 @@ export default class RemoteControl extends LightningElement {
         publish(this.messageContext, COUNT_UPDATED_CHANNEL, payload);
     }
     handleMultiply(event) {
+        console.log('S');
         const factor = event.detail;
         // this.counter *= factor;
         const payload = { 

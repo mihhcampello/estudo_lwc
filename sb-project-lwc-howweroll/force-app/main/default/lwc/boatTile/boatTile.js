@@ -14,13 +14,7 @@ export default class BoatTile extends LightningElement {
     // Getter for dynamically setting the tile class based on whether the
     // current boat is selected
     get tileClass() {
-        if(!selectedBoatId ||
-         selectedBoatId != "" || 
-         selectedBoatId != null ||
-         selectedBoatId != undefined)
-            return TILE_WRAPPER_SELECTED_CLASS;
-        else
-            return TILE_WRAPPER_UNSELECTED_CLASS;
+        this.selectedBoatId == this.boat.Id ? TILE_WRAPPER_SELECTED_CLASS : TILE_WRAPPER_UNSELECTED_CLASS; 
     }    
     // Fires event with the Id of the boat that has been selected.
     selectBoat() {

@@ -10,6 +10,7 @@ export default class Counts extends LightningElement {
     messageContext;
 
     subscribeToMessageChannel() {
+        console.log('G');
         this.subscription = subscribe(
         this.messageContext,
         COUNT_UPDATED_CHANNEL,
@@ -17,6 +18,7 @@ export default class Counts extends LightningElement {
         );
     }
     handleMessage(message) {
+        console.log('H');
         this.priorCount = this.counter;
         if(message.operator == 'add') {
             this.counter += message.constant;
@@ -27,6 +29,7 @@ export default class Counts extends LightningElement {
         }
     }
     connectedCallback() {
+        console.log('I');
         this.subscribeToMessageChannel();
     }
 }

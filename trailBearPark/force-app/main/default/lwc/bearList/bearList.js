@@ -12,15 +12,18 @@ export default class BearList extends NavigationMixin(LightningElement) {
 	@wire(MessageContext) messageContext;
 	@wire(searchBears, {searchTerm: '$searchTerm'})
 	loadBears(result) {
-	this.bears = result;
-	if (result.data) {
-		const message = {
-		bears: result.data
-		};
-		publish(this.messageContext, BEAR_LIST_UPDATE_MESSAGE, message);
-	}
+		console.log('A');
+		console.log('A result: '+ result);
+		this.bears = result;
+		if (result.data) {
+			const message = {
+			bears: result.data
+			};
+			publish(this.messageContext, BEAR_LIST_UPDATE_MESSAGE, message);
+		}
 	}
 	handleSearchTermChange(event) {
+		console.log('B');
 		// Debouncing this method: do not update the reactive property as
 		// long as this function is being called within a delay of 300 ms.
 		// This is to avoid a very large number of Apex method calls.
@@ -32,9 +35,11 @@ export default class BearList extends NavigationMixin(LightningElement) {
 		}, 300);
 	}
 	get hasResults() {
+		console.log('C');
 		return (this.bears.data.length > 0);
 	}
 	handleBearView(event) {
+		console.log('D');
 		// Get bear record id from bearview event
 		const bearId = event.detail;		
 		// Navigate to bear record page

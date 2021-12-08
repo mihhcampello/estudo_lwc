@@ -7,6 +7,7 @@ export default class BearMap extends LightningElement {
   @wire(MessageContext)
   messageContext;
   connectedCallback() {
+    console.log('H');
     // Subscribe to BearListUpdate__c message
     this.subscription = subscribe(
         this.messageContext,
@@ -16,11 +17,13 @@ export default class BearMap extends LightningElement {
         });
   }
   disconnectedCallback() {
+    console.log('I');
     // Unsubscribe from BearListUpdate__c message
     unsubscribe(this.subscription);
     this.subscription = null;
   }
   handleBearListUpdate(message) {
+    console.log('J');
     this.mapMarkers = message.bears.map(bear => {
       const Latitude = bear.Location__Latitude__s;
       const Longitude = bear.Location__Longitude__s;

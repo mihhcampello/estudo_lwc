@@ -8,6 +8,7 @@ export default class BearSupervisor extends LightningElement {
 	@wire(getRecord, { recordId: '$recordId', fields: bearFields })
   bear;
 	get supervisorId() {
+		console.log('L');
 		return getFieldValue(this.bear.data, SUPERVISOR_FIELD);
 	}
 }
