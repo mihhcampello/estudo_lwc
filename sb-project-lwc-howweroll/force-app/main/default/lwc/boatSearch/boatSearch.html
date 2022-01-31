@@ -3,14 +3,14 @@
     <!-- Top -->
     <lightning-layout-item size="12">
       <lightning-card title="Find a Boat">
-        <lightning-button label="New Boat" slot="actions" title="Non-primary action" onclick={createNewBoat} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button label="New Boat" slot="actions" title="Non-primary action" onclick={createNewBoat} class="slds-var-m-left_x-small"></lightning-button>
         <p class="slds-var-p-horizontal_small">
           <c-boat-search-form onsearch={searchBoats}></c-boat-search-form>
         </p>
       </lightning-card>
     </lightning-layout-item>
     <!-- Bottom -->
-    <lightning-layout-item size="12" class="slds-p-top_small slds-is-relative">
+    <lightning-layout-item size="12" class="slds-var-p-top_small slds-is-relative">
       <template if:false={isLoading}>
           <lightning-spinner alternative-text="Loading" class="slds-spinner slds-spinner_medium slds-spinner_brand"></lightning-spinner>
       </template>
